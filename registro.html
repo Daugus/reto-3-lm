@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" id="html_inicio_registro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Rekord Autoak | Registro</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href="style.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="src/icono.ico"/>
+</head>
+
+<body>
+<!--HEADER-->
+<header id="header_registro-inicio">
+  <a href="index.html"><img id="logoRKA" src="src/logo.png" alt="Rekord Autoak"></a>
+</header>
+  
+<!-- BARRA DE NAVEGACION -->
+<nav>
+  <li><a href="index.html">Inicio</a></li>
+  <li><a href="proyectos.html">Proyectos</a></li>
+  <li><a href="contacto.html">Contacto</a></li>
+  <li><a href="politica.html">Política de reciclaje</a></li>
+  <li><a href="inicio_sesion.html" id="active">Iniciar sesión</a></li>
+</nav>
+
+<main>
+  <div id="grid-container" class="grid-container_registro_inicio">
+    <!--FORMULARIO-->
+    <div class="grid-item" id="inicio-registro">
+      <form autocomplete="off" id="form" action="inicio_sesion.html">
+        <h4>REGISTRARSE</h4>
+        <input type="text" name="nombres" id="nombres" placeholder="Nombre *" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ ]+$" required autofocus>
+        <input type="text" name="apellido" id="apellido" placeholder="Apellidos *" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ ]+$" required>
+        <input type="tel" name="telefono" id="telefono" placeholder="Teléfono (sin espacios) *" pattern="[6-7][0-9]{8}" required>
+        <input type="email" name="email" id="email" placeholder="Correo eletrónico *" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+        <input type="password" size="44" placeholder="Contraseña *" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" title="La contraseña debe contener 8 carácteres o más (y al menos, un número, una letra mayúscula y minúscula)" required>
+        <input type="checkbox" name="acepto" id="acepto" required>
+        <label for="acepto">He leído y acepto la política de privacidad</label>
+        <br>
+        <button type="submit" class="boton-form">Crear cuenta</button>
+        <p class="obligatorio">Campos obligatorios</p>
+        <p>¿Ya tienes cuenta? <a href="inicio_sesion.html">Iniciar sesión</a></p>
+      </form>
+    </div>
+  </div>
+</main>
+</body>

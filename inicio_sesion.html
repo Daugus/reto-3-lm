@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" id="html_inicio_registro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>Rekord Autoak | Iniciar sesión</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href="style.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="src/icono.ico"/>
+</head>
+
+<body>
+<!--HEADER-->
+<header id="header_registro-inicio">
+  <a href="index.html"><img id="logoRKA" src="src/logo.png" alt="Rekord Autoak"></a>
+</header>
+  
+<!-- BARRA DE NAVEGACION -->
+<nav>
+  <li><a href="index.html">Inicio</a></li>
+  <li><a href="proyectos.html">Proyectos</a></li>
+  <li><a href="contacto.html">Contacto</a></li>
+  <li><a href="politica.html">Política de reciclaje</a></li>
+  <li><a href="inicio_sesion.html" id="active">Iniciar sesión</a></li>
+</nav>
+
+<main>
+  <div id="grid-container" class="grid-container_registro_inicio">
+    <!--FORMULARIO-->
+    <div class="grid-item" id="inicio-registro">
+      <form autocomplete="on" id="form" action="index.html">
+        <h4>INICIAR SESIÓN</h4>
+        <input type="email" name="email" id="email" placeholder="Correo eletrónico" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" autofocus required>
+        <input type="password" size="44" placeholder="Contraseña" pattern=".{8,20}" title="La contraseña debe contener 8 carácteres o más." required>
+        <button type="submit" class="boton-form">Acceder</button>
+        <p>¿No te has registrado? <a href="registro.html">Crear cuenta</a></p>
+      </form>
+    </div>
+  </div>
+</main>
+</body>

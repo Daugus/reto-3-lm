@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- elemento raiz-->
+    <xs:element name="contactos">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- padre-->
+                <xs:element name="contacto">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!--hijos-->
+                            <xs:element name="nombre">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+      								   	<xs:pattern value="[A-Za-zÀ-ÖØ-öø-ÿ ]*"/> 
+                                        <xs:minLength value="3"/>
+                                        <xs:maxLength value="20"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="apellidos">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+      									<xs:pattern value="[A-Za-zÀ-ÖØ-öø-ÿ ]*"/>
+                                        <xs:minLength value="3"/>
+                                        <xs:maxLength value="20"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="email">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="6"/>
+                                        <xs:maxLength value="40"/>
+                                        <xs:pattern value="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"/>
+                                        <xs:whiteSpace value="collapse"/> 
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="telefono">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:positiveInteger">
+                                      <xs:pattern value="[6-7]{1}[0-9]{8}"/>
+                                      <xs:totalDigits value="9"/> 
+                                      <xs:whiteSpace value="collapse"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="seleccionar" minOccurs="1" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="consulta" minOccurs="0"/>
+                                        <xs:element name="reparacion"  minOccurs="0"/>
+                                        <xs:element name="otro"  minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="mensaje">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="1"/>
+                                        <xs:maxLength value="300"/>
+                                        <xs:pattern value="[A-Za-z0-9.-_@ ]+"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

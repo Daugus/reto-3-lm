@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>Rekord Autoak | Contacto</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link href="style.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="src/icono.ico"/>
+</head>
+
+<body>
+<!--HEADER-->
+<header id="header_contacto">
+  <a href="index.html"><img id="logoRKA" src="src/logo.png" alt="Rekord Autoak"></a>
+</header>
+  
+<!-- BARRA DE NAVEGACION -->
+<nav>
+  <li><a href="index.html">Inicio</a></li>
+  <li><a href="proyectos.html">Proyectos</a></li>
+  <li><a href="contacto.html" id="active">Contacto</a></li>
+  <li><a href="politica.html">Política de reciclaje</a></li>
+  <li><a href="inicio_sesion.html">Iniciar sesión</a></li>
+</nav>
+
+<!--CUERPO DE PAGINA-->
+<main>
+  <h1>Contacta con nosotros</h1>
+  <p>Si tienes algun problema con tu vehículo, no dudes en ponerte en contacto con nosotros a traves del formulario o viniendo a nuestro taller.</p>
+  <div id="grid-container" class="grid-container_contacto">
+    <!--TABLA-->
+    <div class="grid-item" id="tabla">
+      <table>
+        <thead>
+          <th colspan="7">Horario</th>
+        </thead>
+        <tbody>
+        <tr>
+          <th>Lunes</th>
+          <th>Martes</th>
+          <th>Miércoles</th>
+          <th>Jueves</th>
+          <th>Viernes</th>
+        </tr>
+  
+        <tr>
+          <td>9:00 - 13:00</td>
+          <td>9:00 - 13:00</td>
+          <td>9:00 - 13:00</td>
+          <td>9:00 - 13:00</td>
+          <td>9:00 - 13:00</td>
+        </tr>
+  
+        <tr>
+          <td>15:00 - 19:00</td>
+          <td>15:00 - 19:00</td>
+          <td>15:00 - 19:00</td>
+          <td>15:00 - 19:00</td>
+          <td>15:00 - 19:00</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="tabla-vertical">
+      <table>
+        <thead>
+          <th colspan="3">Horario</th>
+        </thead>
+        <tbody>
+        <tr>
+          <th>Lunes</th>
+          <td>9:00 - 13:00</td>
+          <td>15:00 - 19:00</td>
+        </tr>
+        <tr>
+          <th>Martes</th>
+          <td>9:00 - 13:00</td>
+          <td>15:00 - 19:00</td>
+        </tr>
+        <tr>
+          <th>Miércoles</th>
+          <td>9:00 - 13:00</td>
+          <td>15:00 - 19:00</td>
+        </tr>
+        <tr>
+          <th>Jueves</th>
+          <td>9:00 - 13:00</td>
+          <td>15:00 - 19:00</td>
+        </tr>
+        <tr>
+          <th>Viernes</th>
+          <td>9:00 - 13:00</td>
+          <td>15:00 - 19:00</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!--MAPA-->
+      <div class="grid-item mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.699182971125!2d-2.9049657846690087!3d43.25772598593129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e4fac87437727%3A0x364f27e82def0130!2sCIFP%20Txurdinaga%20LHII!5e0!3m2!1ses!2ses!4v1634883275826!5m2!1ses!2ses" loading="lazy" height="100%" width="100%"></iframe>
+      </div>
+    <!--FORMULARIO-->
+    <div class="grid-item">
+      <form autocomplete="off" id="formulario-contacto" action="contacto.html">
+        <fieldset class="fieldset">
+          <h4 class="pregunta">Qué servicio requiere</h4>
+          <input class="controls" type="text" name="nombres" id="nombres" placeholder="Nombre *" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ ]+$" required autofocus>
+          <input class="controls" type="text" name="apellidos" id="apellidos" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ ]+$" placeholder="Apellidos">
+          <input class="controls" type="email" name="email" id="email" placeholder="Email *" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+          <input class="controls" type="tel" name="telefonos" id="telefonos" placeholder="Teléfono *"  maxlength="9" pattern="[6-7][0-9]{8}" title="El número de teléfono debe tener 9 números.">
+          <select name="tipo" id="tipo">
+            <option value="consulta">Consulta</option>
+            <option value="reparacion">Reparación</option>
+            <option value="otro">Otro...</option>
+          </select>
+          <textarea class="controls" type="text" name="servicios" id="servicios" placeholder="Servicio requerido *" pattern="[A-Za-z0-9.-_@ ]{1,300}" required></textarea>
+          <p class="obligatorio">Campos obligatorios</p>
+        <button type="submit" class="boton-form">Enviar</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</main>
+
+<!--FOOTER-->
+<div class="subir"><a href="#"><img src="src/arriba.png"></a></div>
+<footer>
+    <p>Calle Doctor Ornilla 2 - 48004 - Bilbao - Vizcaya</p>
+    <p>944 12 57 12</p>
+    <div class="linea"></div>
+    <div class="social">
+      <a href="https://www.instagram.com/"><img src="src/social/instagram.png" alt="Instagram"></a>
+      <a href="https://twitter.com/"><img src="src/social/twitter.png" alt="Twitter"></a>
+      <a href="https://facebook.com"><img src="src/social/facebook.png" alt="Facebook"></a>
+    </div>
+    <h2>&copy; Rekord Autoak 2021-2022</h2>
+  </footer>
+</body>

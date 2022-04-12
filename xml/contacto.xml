@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contactos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/contacto.xsd">
+    <contacto>
+        <nombre>Augusto</nombre>
+        <apellidos>de la Cámara</apellidos>
+        <email>augustodelacamara@gmail.com</email>
+        <telefono>623456789</telefono>
+        <seleccionar>
+            <consulta></consulta>
+            <reparacion></reparacion>
+            <otro></otro>
+        </seleccionar>
+        <mensaje>mensaje de prueba</mensaje>
+    </contacto>
+</contactos>
