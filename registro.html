@@ -7,6 +7,8 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link href="style.css" rel="stylesheet">
+  <!--Scripts de la pagina de carga y del login/register-->
+  <script src="ValidationRegistro.js" defer></script>
   <link rel="shortcut icon" type="image/png" href="src/icono.ico"/>
 </head>
 
@@ -21,7 +23,6 @@
   <li><a href="index.html">Inicio</a></li>
   <li><a href="proyectos.html">Proyectos</a></li>
   <li><a href="contacto.html">Contacto</a></li>
-  <li><a href="politica.html">Política de reciclaje</a></li>
   <li><a href="inicio_sesion.html" id="active">Iniciar sesión</a></li>
 </nav>
 
@@ -29,21 +30,77 @@
   <div id="grid-container" class="grid-container_registro_inicio">
     <!--FORMULARIO-->
     <div class="grid-item" id="inicio-registro">
-      <form autocomplete="off" id="form" action="inicio_sesion.html">
+      <form autocomplete="off" class="form" id="form">
         <h4>REGISTRARSE</h4>
-        <input type="text" name="nombres" id="nombres" placeholder="Nombre *" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ ]+$" required autofocus>
-        <input type="text" name="apellido" id="apellido" placeholder="Apellidos *" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ ]+$" required>
-        <input type="tel" name="telefono" id="telefono" placeholder="Teléfono (sin espacios) *" pattern="[6-7][0-9]{8}" required>
-        <input type="email" name="email" id="email" placeholder="Correo eletrónico *" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-        <input type="password" size="44" placeholder="Contraseña *" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" title="La contraseña debe contener 8 carácteres o más (y al menos, un número, una letra mayúscula y minúscula)" required>
-        <input type="checkbox" name="acepto" id="acepto" required>
-        <label for="acepto">He leído y acepto la política de privacidad</label>
-        <br>
-        <button type="submit" class="boton-form">Crear cuenta</button>
+        <!-- Grupo: Usuario -->
+			<div class="formulario__grupo" id="grupo__usuario">
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Usuario:   john123">
+				</div>
+				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+			</div>
+
+			<!-- Grupo: Nombre -->
+			<div class="formulario__grupo" id="grupo__nombre">
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Nombre:   John Doe">
+				</div>
+				<p class="formulario__input-error">El nombre tiene que ser de 3 a 16 dígitos y solo puede contener letras, empezando siempre por mayúscula.</p>
+			</div>
+
+			<!-- Grupo: Contraseña -->
+			<div class="formulario__grupo" id="grupo__password">
+				<div class="formulario__grupo-input">
+					<input type="password" class="formulario__input" name="password" id="password" placeholder="Contraseña">
+				</div>
+				<p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+			</div>
+
+			<!-- Grupo: Contraseña 2 -->
+			<div class="formulario__grupo" id="grupo__password2">
+				<div class="formulario__grupo-input">
+					<input type="password" class="formulario__input" name="password2" id="password2" placeholder="Repetir contraseña">
+				</div>
+				<p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+			</div>
+
+			<!-- Grupo: Correo Electronico -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<div class="formulario__grupo-input">
+					<input type="email" class="formulario__input" name="correo" id="correo" placeholder="Correo electrónico:   correo@correo.com">
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+			</div>
+
+			<!-- Grupo: Teléfono -->
+			<div class="formulario__grupo" id="grupo__telefono">
+				<div class="formulario__grupo-input" >
+					<input type="tel" class="formulario__input" name="telefono" id="telefono" placeholder="Teléfono:   654654654" maxlength="9">
+				</div>
+				<p class="formulario__input-error">El telefono solo puede contener numeros, el maximo son 9 dígitos y debe comenzar por 6, 7 o 9.</p>
+			</div>
+
+			<!-- Grupo: Terminos y Condiciones -->
+			<div class="formulario__grupo" id="grupo__terminos">
+				<label class="formulario__label">
+					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos"> <a id="acepto" href="./PDF/POLÍTICA DE PRIVACIDAD.pdf" >*He leido y acepto la politica de privacidad.</a>
+        		</label>
+			</div>
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p><p>Recuerda aceptar la política de privacidad </p>
+			</div>
+
+      <br>
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+        		<button type="submit" class="boton-form" name="botonRegistro">Crear cuenta</button>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+			</div><br>
         <p class="obligatorio">Campos obligatorios</p>
         <p>¿Ya tienes cuenta? <a href="inicio_sesion.html">Iniciar sesión</a></p>
       </form>
     </div>
   </div>
 </main>
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>

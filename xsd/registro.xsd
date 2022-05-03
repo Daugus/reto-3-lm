@@ -22,6 +22,7 @@
                              <xs:simpleType>
                                     <xs:restriction base="xs:string">
       									<xs:pattern value="[A-Za-zÀ-ÖØ-öø-ÿ ]*"/>
+                                        <xs:minInclusive value="3"/>
                                         <xs:maxLength value="20"/>
     								</xs:restriction>
                                 </xs:simpleType>
@@ -39,7 +40,7 @@
                             <xs:element name="telefono">
                              <xs:simpleType>
                                     <xs:restriction base="xs:positiveInteger">
-                                      <xs:pattern value="[6-7]{1}[0-9]{8}"/>
+                                      <xs:pattern value="[6-7][0-9]{9}"/>
                                       <xs:totalDigits value="9"/> 
                                       <xs:whiteSpace value="collapse"/> 
     								</xs:restriction>

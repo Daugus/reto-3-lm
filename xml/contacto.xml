@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <contactos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/contacto.xsd">
     <contacto>
-        <nombre>Augusto</nombre>
-        <apellidos>de la Cámara</apellidos>
-        <email>augustodelacamara@gmail.com</email>
-        <telefono>623456789</telefono>
+        <nombre Compuesto="no">Augusto</nombre>
+        <apellidos nºapellidos="1">de la Cámara</apellidos>
+        <email dominio="gemail-hotmail">augustodelacamara@gmail.com</email>
+        <telefono categoria="numeros">623456789</telefono>
         <seleccionar>
             <consulta></consulta>
             <reparacion></reparacion>
             <otro></otro>
         </seleccionar>
-        <mensaje>mensaje de prueba</mensaje>
+        <mensaje idioma="Español">mensaje de prueba</mensaje>
     </contacto>
 </contactos>

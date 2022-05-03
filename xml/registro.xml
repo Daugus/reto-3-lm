@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+    <?xml version="1.0" encoding="UTF-8"?>
 <registro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/registro.xsd">
     <cuenta>
-        <nombre>Augusto</nombre>
-        <apellidos>de la Cámara</apellidos>
-        <email>augustodelacamara@gmail.com</email>
-        <telefono>623456789</telefono>
+        <nombre Compuesto="no">Augusto</nombre>
+        <apellidos  nºapellidos="1">de la Cámara</apellidos>
+        <email dominio="gemail-hotmail">augustodelacamara@gmail.com</email>
+        <telefono categoria="numeros">623456789</telefono>
         <contrasena>Augusto123</contrasena>
     </cuenta>
 </registro>

@@ -40,8 +40,7 @@
                             <xs:element name="telefono">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:positiveInteger">
-                                      <xs:pattern value="[6-7]{1}[0-9]{8}"/>
-                                      <xs:totalDigits value="9"/> 
+                                      <xs:pattern value="[6-7][0-9]{9}"/>
                                       <xs:whiteSpace value="collapse"/>
                                     </xs:restriction>
                                 </xs:simpleType>
