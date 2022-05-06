@@ -24,6 +24,7 @@
   <li><a href="proyectos.html">Proyectos</a></li>
   <li><a href="contacto.html" id="active">Contacto</a></li>
   <li><a href="inicio_sesion.html">Iniciar sesión</a></li>
+  <li><a href="registro.html">Registrarse</a></li>
 </nav>
 
 <!--CUERPO DE PAGINA-->
@@ -117,7 +118,7 @@
 				<div class="formulario__grupo-input">
 					<input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Nombre:   John Doe">
 				</div>
-				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+				<p class="formulario__input-error">El nombre tiene que ser de 3 a 16 dígitos y solo puede contener letras. Debe comenzar por mayusculas.</p>
 			</div>
 
 
@@ -138,7 +139,7 @@
 			</div>
 
       <!-- Grupo: Tipo consulta  -->
-      <div class="formulario__grupo" id="grupo__telefono">
+      <div class="formulario__grupo">
 				<div class="formulario__grupo-input" >
           <select name="tipo" id="tipo">
             <option value="consulta">Consulta</option>
@@ -149,15 +150,13 @@
 			</div>
 
       <!-- Grupo: Explicacion-->
-      <div class="formulario__grupo" id="grupo__telefono">
+      <div class="formulario__grupo" id="grupo__servicios">
 				<div class="formulario__grupo-input" >
           <textarea class="controls" type="text" name="servicios" id="servicios" placeholder="Servicio requerido *" ></textarea>			
         </div>
+        <p class="formulario__input-error">Comprueba que el mensaje es correcto.</p>
 			</div>
       
-
-
-
 			<div class="formulario__mensaje" id="formulario__mensaje">
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>

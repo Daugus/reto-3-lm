@@ -9,6 +9,8 @@
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link href="style.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="src/icono.ico"/>
+  <script src="ValidationLogin.js" defer></script>
+
 </head>
 
 <body>
@@ -23,6 +25,7 @@
   <li><a href="proyectos.html">Proyectos</a></li>
   <li><a href="contacto.html">Contacto</a></li>
   <li><a href="inicio_sesion.html" id="active">Iniciar sesión</a></li>
+  <li><a href="registro.html">Registrarse</a></li>
 </nav>
 
 <main>
@@ -31,9 +34,35 @@
     <div class="grid-item" id="inicio-registro">
       <form autocomplete="on" id="form" action="index.html">
         <h4>INICIAR SESIÓN</h4>
-        <input type="email" name="email" id="email" placeholder="Correo eletrónico" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" autofocus required>
-        <input type="password" size="44" placeholder="Contraseña" pattern=".{8,20}" title="La contraseña debe contener 8 carácteres o más." required>
-        <button type="submit" class="boton-form">Acceder</button>
+        <!-- Grupo: Correo Electronico -->
+        <div class="formulario__grupo" id="grupo__correo">
+          <div class="formulario__grupo-input">
+            <input type="email" class="formulario__input" name="correo" id="correo" placeholder="Correo electrónico:   correo@correo.com">
+          </div>
+          <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+        </div>
+        
+        <!-- Grupo: Contraseña -->
+        <div class="formulario__grupo" id="grupo__password">
+          <div class="formulario__grupo-input">
+            <input type="password" class="formulario__input" name="password" id="password" placeholder="Contraseña">
+          </div>
+          <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+        </div>
+
+        <div class="formulario__mensaje" id="formulario__mensaje">
+          <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> El correo o la contraseña son incorrectos. Prueba otra vez.  </p>
+        </div>
+  
+        <br>
+
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+              <button type="submit" class="boton-form" name="botonInicioSesion">Iniciar sesión</button>
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+        </div>
+
+        <br>
+
         <p>¿No te has registrado? <a href="registro.html">Crear cuenta</a></p>
       </form>
     </div>

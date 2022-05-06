@@ -19,6 +19,14 @@ const campos = {
 	telefono: false
 }
 
+const registro = {
+	nombre : document.getElementById('nombre'),
+	usuario : document.getElementById('usuario'),
+	password : document.getElementById('password'),
+	correo : document.getElementById('correo'),
+	telefono : document.getElementById('telefono')
+}
+
 
 const validarFormulario = (e) => {
 	switch (e.target.name) {
@@ -95,14 +103,31 @@ inputs.forEach((input) => {
 	input.addEventListener('blur', validarFormulario);
 });
 
+
+//Guardar datos de la sesion
+const GuardarRegistro = () =>{
+	// var nombre = document.getElementById('nombre').value;
+	// var usuario = document.getElementById('usuario').value;
+	// var password = document.getElementById('password').value;
+	// var correo = document.getElementById('correo').value;
+	// var telefono = document.getElementById('telefono').value;
+	localStorage.setItem("Nombre", registro.nombre.value);
+	localStorage.setItem("Usuario", registro.usuario.value);
+	localStorage.setItem("Contraseña", registro.password.value);
+	localStorage.setItem("Correo", registro.correo.value);
+	localStorage.setItem("Telefono", registro.telefono.value);
+	localStorage.setItem("Estado", 0);
+}
+
+
 //Comprobar formulario al pulsar el boton
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	const terminos = document.getElementById('terminos');
 	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked ){
+		GuardarRegistro();
 		formulario.reset();
-
         document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
         
@@ -110,12 +135,6 @@ formulario.addEventListener('submit', (e) => {
 			// document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
             window.location.replace('inicio_sesion.html');
 		}, 1000);
-
-
-
-		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-			icono.classList.remove('formulario__grupo-correcto');
-		});
 	} else {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         
@@ -124,4 +143,6 @@ formulario.addEventListener('submit', (e) => {
 		}, 3000);
 	}
 });
+
+
 
