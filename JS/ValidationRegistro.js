@@ -1,6 +1,7 @@
 // Seleccionar el formulario y los inputs
 const formulario = document.getElementById('form');
 const inputs = document.querySelectorAll('#form input')
+const btn = document.getElementById('btnRegistro')
 
 // Declarar las expresions regulares para cada campos
 const expresiones = {
@@ -144,5 +145,21 @@ formulario.addEventListener('submit', (e) => {
 	}
 });
 
+//Hover del boton
+btn.addEventListener('mouseover', (e) => {
+	e.preventDefault();
 
+	document.getElementById('btnRegistro').style.cursor='pointer';
+	document.getElementById('btnRegistro').style.boxShadow='0px 0px 0.623rem var(--azul)';
+	document.getElementById('btnRegistro').style.transform='scale(1.1)';
 
+})
+
+btn.addEventListener('mouseout', (e) => {
+	e.preventDefault();
+
+	document.getElementById('btnRegistro').style.cursor='none';
+	document.getElementById('btnRegistro').style.boxShadow='none';
+	document.getElementById('btnRegistro').style.transform='none';
+
+})
