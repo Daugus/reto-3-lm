@@ -1,6 +1,7 @@
 // Seleccionar el formulario y los inputs
 const formulario = document.getElementById('form');
 const inputs = document.querySelectorAll('#form input');
+const btn = document.getElementById('btnInicioSesion')
 
 
 // Declarar las expresions regulares para cada campos
@@ -57,7 +58,7 @@ inputs.forEach((input) => {
 
 
 //Comprobar formulario al pulsar el boton
-formulario.addEventListener('submit', (e) => {
+btn.addEventListener('click', (e) => {
 	e.preventDefault();
     const correo = document.getElementById('correo').value;
     const correols = localStorage.getItem('Correo');
@@ -98,3 +99,23 @@ const prueba = () => {
         console.log('El correo no es el mismo')
     }
 }
+
+//Hover del boton
+
+btn.addEventListener('mouseover', (e) => {
+	e.preventDefault();
+
+	document.getElementById('btnInicioSesion').style.cursor='pointer';
+	document.getElementById('btnInicioSesion').style.boxShadow='0px 0px 0.623rem var(--azul)';
+	document.getElementById('btnInicioSesion').style.transform='scale(1.1)';
+
+})
+
+btn.addEventListener('mouseout', (e) => {
+	e.preventDefault();
+
+	document.getElementById('btnInicioSesion').style.cursor='none';
+	document.getElementById('btnInicioSesion').style.boxShadow='none';
+	document.getElementById('btnInicioSesion').style.transform='none';
+
+})

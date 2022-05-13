@@ -2,6 +2,7 @@
 const formulario = document.getElementById('FormularioContacto');
 const inputs = document.querySelectorAll('#FormularioContacto input');
 const textarea = document.querySelector('#FormularioContacto textarea'); 
+const btn = document.getElementById('btnContacto');
 
 
 // Declarar las expresions regulares para cada campos
@@ -113,10 +114,22 @@ formulario.addEventListener('submit', (e) => {
 });
 
 
-inputs.forEach((input) => {
-	input.addEventListener('onfocus', PonerBordes);
-});
+//Hover del boton
+btn.addEventListener('mouseover', (e) => {
+	e.preventDefault();
 
-const PonerBordes = () =>{
-	document.getElementById("formulario__grupo-input").style.border = "2px solid var(--azul)"
-}
+	document.getElementById('btnContacto').style.cursor='pointer';
+	document.getElementById('btnContacto').style.boxShadow='0px 0px 0.623rem var(--azul)';
+	document.getElementById('btnContacto').style.transform='scale(1.1)';
+
+})
+
+btn.addEventListener('mouseout', (e) => {
+	e.preventDefault();
+
+	document.getElementById('btnContacto').style.cursor='none';
+	document.getElementById('btnContacto').style.boxShadow='none';
+	document.getElementById('btnContacto').style.transform='none';
+
+})
+

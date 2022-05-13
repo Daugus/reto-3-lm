@@ -8,10 +8,11 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link href="style.css" rel="stylesheet" >
+  <script src="JS/SesionControl.js" defer></script>
   <link rel="shortcut icon" type="image/png" href="src/icono.ico"/>
 </head>
 
-<body>
+<body onload="SesionControl()">
 <!--HEADER-->
 <header id="header_proyectos">
   <a href="index.html"><img id="logoRKA" src="src/logo.png" alt="Rekord Autoak"></a>
@@ -22,8 +23,10 @@
   <li><a href="index.html">Inicio</a></li>
   <li><a href="proyectos.html" id="active">Proyectos</a></li>
   <li><a href="contacto.html">Contacto</a></li>
-  <li><a href="inicio_sesion.html">Iniciar sesión</a></li>
-  <li><a href="registro.html">Registrarse</a></li>
+  <li><a id="inicio-sesion" href="inicio_sesion.html">Iniciar sesión</a></li>
+  <li><a id="registro-sesion" href="registro.html">Registrarse</a></li>
+  <p id="usuario-sesion"></p>
+  <button id="cerrar-sesion">Cerrar sesión</button>
 </nav>
 
 <!--CUERPO DE PAGINA-->
