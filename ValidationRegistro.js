@@ -111,13 +111,46 @@ const GuardarRegistro = () =>{
 	// var password = document.getElementById('password').value;
 	// var correo = document.getElementById('correo').value;
 	// var telefono = document.getElementById('telefono').value;
-	localStorage.setItem("Nombre", registro.nombre.value);
-	localStorage.setItem("Usuario", registro.usuario.value);
-	localStorage.setItem("Contraseña", registro.password.value);
-	localStorage.setItem("Correo", registro.correo.value);
-	localStorage.setItem("Telefono", registro.telefono.value);
+
+
+	objRegistro = {
+		"Nombre": registro.nombre.value,
+		"Usuario": registro.usuario.value,
+		"Contraseña": registro.password.value,
+		"Correo":registro.correo.value,
+		"Telefono": registro.telefono.value
+	};
+	const registroString = JSON.stringify(objRegistro);
 	localStorage.setItem("Estado", 0);
+	localStorage.setItem(localStorage.length, registroString);
+	alert("Registro guardado correctamente. En total hay " + (localStorage.length -1) + " registros.")
+	NuevaVentana();
+
 }
+
+const NuevaVentana = () => {
+	if ((localStorage.length == 0) || (localStorage.length == 1)){
+		alert("No existen registros");
+	}
+	else{
+		var ventanaNueva = window.open("", "Lista de registros");
+				const parrafo = ventanaNueva.document.createElement("p"); //Crear un párrafo nuevo
+				parrafo.innerText = '{ "Registros de los usuarios": [' ;
+				ventanaNueva.document.body.appendChild(parrafo);
+				for (i = 1; i <= localStorage.length; i++) {
+					let registroString = localStorage.getItem(i); //Obtener el registro desde el navagador
+					const objRegistro = JSON.parse(registroString); //Convertir en String
+					const parrafo = ventanaNueva.document.createElement("p"); //Crear un párrafo nuevo
+					if (i < localStorage.length) parrafo.innerText = '{"Nombre":"'  + objRegistro.Nombre + '", "Usuario":"'  + objRegistro.Usuario + '", "Contraseña":"'  + objRegistro.Contraseña + '", "Correo":"'  + objRegistro.Correo + '", "Teléfono":"'  + objRegistro.Telefono + '"},';
+					else parrafo.innerText = '{"Nombre":"'  + objRegistro.Nombre + '", "Usuario":"'  + objRegistro.Usuario + '", "Contraseña":"'  + objRegistro.Contraseña + '", "Correo":"'  + objRegistro.Correo + '", "Teléfono":"'  + objRegistro.Telefono + '"},';
+					ventanaNueva.document.body.appendChild(parrafo);
+				}
+				const parrafo2 = ventanaNueva.document.createElement("p"); //paragrafo berria sortu
+				parrafo2.innerText = ']}' ;
+				ventanaNueva.document.body.appendChild(parrafo2);
+	}
+}
+
 
 
 //Comprobar formulario al pulsar el boton
