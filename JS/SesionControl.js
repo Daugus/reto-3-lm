@@ -41,7 +41,7 @@ const CerrarSesion = () => {
 }
 
 const EliminarCuentas = () => {
-    alert(localStorage.length + " Cuentas eliminadas")
+    alert(localStorage.length-1 + " Cuentas eliminadas")
     localStorage.clear();
     localStorage.setItem("Estado", 0);
     window.location.replace('index.html');

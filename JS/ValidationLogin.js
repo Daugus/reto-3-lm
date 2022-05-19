@@ -65,34 +65,31 @@ btn.addEventListener('click', (e) => {
 	e.preventDefault();
 
     const correo = inicio.correo.value;
-    const cont = inicio.password.value;
+	const password = inicio.password.value;
 
-   	let correols1;
-	let contls1;
+	let correols2;
+	let passwordls2;
 
 	const limite = localStorage.length;
-	const estado = localStorage.getItem('Estado');
-	
-	if(campos.correo && campos.password){
-		for(let i = 0; i < limite; i++){
-			
+	const estado = localStorage.getItem('estado');
+	if (campos.correo && campos.password) {
+		for (let i = 0; i < limite; i++) {
 			const item = localStorage.getItem(i);
-			if (item !== estado){
-				const datos = JSON.parse(item);
+			if (item !== estado) {
+				const datosUsuario = JSON.parse(item);
 
-				const correols2 = datos.correo;
-				const contls2 = datos.password;
-
-				if (correols2 === correo && contls2 === cont){
-					correols1 == datos.correo;
-					contls1 == datos.password;
+				const correols1 = datosUsuario.Correo
+				const passwordls1 = datosUsuario.Contraseña
+				if (correols1 === correo && passwordls1 === password) {
+					correols2 = datosUsuario.Correo;
+					passwordls2 = datosUsuario.Contraseña;
 				}
 			}
 		}
 	}
 
 
-	if(correo === correols1 && cont === contls1 && campos.correo && campos.password){
+	if (correols2 === correo && passwordls2 === password && campos.correo && campos.password) {
         
 		document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
