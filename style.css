@@ -753,7 +753,7 @@ ul{
   div#grid-container.grid-container_politica,
   div#grid-container.grid-container_contacto,
   div#grid-container.grid-container_registro_inicio {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
     grid-column-gap: 0;
   }
 

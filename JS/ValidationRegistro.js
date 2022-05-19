@@ -125,7 +125,6 @@ const GuardarRegistro = () =>{
 	localStorage.setItem("Estado", 0);
 	localStorage.setItem(localStorage.length, registroString);
 	alert("Registro guardado correctamente. En total hay " + (localStorage.length -1) + " registros.")
-	NuevaVentana();
 
 }
 
@@ -164,11 +163,14 @@ formulario.addEventListener('submit', (e) => {
 		formulario.reset();
         document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-        
 		setTimeout(() => {
 			// document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-            window.location.replace('inicio_sesion.html');
+			window.location.replace('inicio_sesion.html');
 		}, 1000);
+		NuevaVentana();
+
+        
+		
 	} else {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         

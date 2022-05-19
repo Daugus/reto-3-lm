@@ -15,12 +15,15 @@ const campos = {
 	correo: false,
 }
 
+const inicio = {
+	password: document.getElementById('password'),
+	correo: document.getElementById('correo'),
+}
 
 const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
-			validarPassword2();
 		break;
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
@@ -60,28 +63,52 @@ inputs.forEach((input) => {
 //Comprobar formulario al pulsar el boton
 btn.addEventListener('click', (e) => {
 	e.preventDefault();
-    const correo = document.getElementById('correo').value;
-    const correols = localStorage.getItem('Correo');
 
-    const cont = document.getElementById('password').value;
-    const contls = localStorage.getItem('Contraseña');
+    const correo = inicio.correo.value;
+    const cont = inicio.password.value;
+
+   	let correols1;
+	let contls1;
+
+	const limite = localStorage.length;
+	const estado = localStorage.getItem('Estado');
+	
+	if(campos.correo && campos.password){
+		for(let i = 0; i < limite; i++){
+			
+			const item = localStorage.getItem(i);
+			if (item !== estado){
+				const datos = JSON.parse(item);
+
+				const correols2 = datos.correo;
+				const contls2 = datos.password;
+
+				if (correols2 === correo && contls2 === cont){
+					correols1 == datos.correo;
+					contls1 == datos.password;
+				}
+			}
+		}
+	}
 
 
-	if(correo === correols && cont === contls){
+	if(correo === correols1 && cont === contls1 && campos.correo && campos.password){
         
-		formulario.reset();
-        localStorage.removeItem("Estado");
-        localStorage.setItem("Estado", 1);
-        document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+		document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+
+		formulario.reset();
+
+        localStorage.removeItem('Estado');
+        localStorage.setItem('Estado', 1);
         
 		setTimeout(() => {
-			// document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
             window.location.replace('index.html');
 		}, 1000);
         
 	} else {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+		document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
         
         setTimeout(() => {
 			document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
@@ -89,15 +116,14 @@ btn.addEventListener('click', (e) => {
 	}
 });
 
+
 const prueba = () => {
-    const correo = document.getElementById('correo').value;
-    const correols = localStorage.getItem('Correo');
-    
-    if (correo === correols) {
-        console.log('Los correos coinciden');
-    } else {
-        console.log('El correo no es el mismo')
-    }
+	console.log(localStorage.length);
+	// for(let i=0; i < limite; i++){
+	// 	const item = localStorage.getItem(i);
+	// 	const datos = JSON.parse(item);
+	// 	console.log(datos);
+	// }
 }
 
 //Hover del boton

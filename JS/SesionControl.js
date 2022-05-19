@@ -35,12 +35,16 @@ const CerrarSesion = () => {
     localStorage.setItem("Estado", 0);
     document.getElementById('inicio-sesion').classList.remove('desactivo');
     document.getElementById('registro-sesion').classList.remove('desactivo');
+    document.getElementById('btnCerrarSesion').classList.add('desactivo');
     document.getElementById('btnEliminarCuentas').classList.add('desactivo');
+
 }
 
 const EliminarCuentas = () => {
     alert(localStorage.length + " Cuentas eliminadas")
     localStorage.clear();
-    localStorage.setItem("Estado", 0)
+    localStorage.setItem("Estado", 0);
+    window.location.replace('index.html');
+
 }
 
